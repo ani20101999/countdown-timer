@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <input type="number" id="input" name="input" placeholder="enter your value" style="text-align: center;">
+        <button id="btn">Enter</button>
+        <div class="output">
+            <span id="current-time">0</span>
+        </div>
+    </div>
+
+    <script>
+       let input = document.getElementById("input");
+       let btn = document.getElementById("btn");
+       let time = document.getElementById("current-time");
+       btn.addEventListener("click",(e)=>{
+       let value1 = Math.floor(input.value);
+        time.innerText = value1;
+        let currentTime = parseInt(time.innerText);
+        
+        for(let i=currentTime;i>0;i--){
+            setTimeout(()=>{
+                time.innerText = currentTime-1
+                currentTime--
+            },i*1000)
+        }
+       })
+
+       
+       
+    //    btn.addEventListener("click",)
+    </script>
+</body>
+</html>
